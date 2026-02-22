@@ -72,7 +72,7 @@ GO
 --Step 8: Setup publisher primary (in primary publisher)
 Use MASTER
 GO
-sp_adddistributor @distributor = 'distributorLsnr', @password = 'MyPassword!!$$'
+sp_adddistributor @distributor = 'distributorLsnr', @password = 'MyPassword!'
 GO
 
 --Step 9: Setup publisher secondary (in secondary publisher)
@@ -188,6 +188,7 @@ GO
 
 --Step 17: Create subscriber listener linked server in secondary publisher and secondary distributor
 --Step 18: Create  publisher linked servers in secondary distributor
+
 
 
 
