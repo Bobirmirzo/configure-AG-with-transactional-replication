@@ -3,7 +3,7 @@ USE master;
 GO
 EXECUTE sys.sp_adddistributor
     @distributor = 'WIN-FVVQ7PLR2I6',  --Primary distributor server name
-    @password = 'MyPassword!!$$';
+    @password = 'MyPassword!';
 GO
 
 --Step 2: Configure distributor (in secondary distributor)
@@ -11,7 +11,7 @@ USE master;
 GO
 EXECUTE sys.sp_adddistributor
     @distributor = 'WIN-SFFBQRKDSRL',  --Secondary distributor server name
-    @password = 'MyPassword!!$$';
+    @password = 'MyPassword!';
 GO
 
 --Step 3: Create distribution database (in primary distributor)
@@ -78,7 +78,7 @@ GO
 --Step 9: Setup publisher secondary (in secondary publisher)
 Use MASTER
 GO
-sp_adddistributor @distributor = 'distributorLsnr', @password = 'MyPassword!!$$'
+sp_adddistributor @distributor = 'distributorLsnr', @password = 'MyPassword!'
 GO
 
 --Step 10: Enable publication in publisher database (in primary publisher)
@@ -188,5 +188,6 @@ GO
 
 --Step 17: Create subscriber listener linked server in secondary publisher and secondary distributor
 --Step 18: Create  publisher linked servers in secondary distributor
+
 
 
